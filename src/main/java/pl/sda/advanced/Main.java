@@ -3,6 +3,11 @@ package pl.sda.advanced;
 public class Main {
     public static void main(String[] args) {
 
+        createCarsBasic();
+
+    }
+
+    private static void createCarsBasic(){
         Car car1 = new Car();
         car1.setModel("XJ");
         car1.setManufacturer("Jaguar");
@@ -19,5 +24,9 @@ public class Main {
         car2.setColour("Czarny");
         car2.setVin("VN213423456755");
         System.out.println("Samochody takie same: " + car1.equals(car2));
+
+        System.out.println("Samochody te same: " + (car2 == car1));
+
+        System.out.println(car1.equals("VN213423456755"));
     }
 }

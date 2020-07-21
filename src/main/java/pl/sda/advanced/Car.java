@@ -34,19 +34,16 @@ public class Car {
                 + vin;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return Objects.equals(model, car.model) &&
-                Objects.equals(manufacturer, car.manufacturer) &&
-                Objects.equals(colour, car.colour) &&
-                Objects.equals(vin, car.vin);
+    public boolean equals(Object anythingElse) {
+        if (!this.getClass().equals(anythingElse.getClass())){
+            return false;
+        }
+        Car car = (Car) anythingElse; // Rzutowanie
+        if (this.vin.equals(car.vin)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(model, manufacturer, colour, vin);
-    }
 }
