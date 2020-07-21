@@ -8,6 +8,15 @@ public class Car {
     private String manufacturer;
     private String colour;
     private String vin;
+    private CarOption[] options = new CarOption[1];
+
+    public CarOption[] getOptions() {
+        return options;
+    }
+
+    public void setOptions(CarOption[] options) {
+        this.options = options;
+    }
 
     public void setModel(String model) {
         this.model = model;
