@@ -1,10 +1,19 @@
 package pl.sda.advanced;
 
+import java.math.BigDecimal;
+
 public class CarOption {
 
     private String optionName; // nazwa wyposazenia
-    private double price;
+    private BigDecimal price;
     private boolean chosen;
+
+    public CarOption(){}
+
+    public CarOption(String optionName, BigDecimal price){
+        this.optionName = optionName;
+        this.price = price;
+    }
 
     public String getOptionName() {
         return optionName;
@@ -14,11 +23,11 @@ public class CarOption {
         this.optionName = optionName;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

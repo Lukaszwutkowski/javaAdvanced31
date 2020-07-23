@@ -1,5 +1,8 @@
 package pl.sda.advanced;
 
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Car {
@@ -9,6 +12,23 @@ public class Car {
     private String colour;
     private String vin;
     private CarOption[] options = new CarOption[1];
+    private BigDecimal basePrice;
+
+    public BigDecimal finallyPrice(){
+        List<CarOption> list = Arrays.asList(options);
+        BigDecimal sum = list.stream().map(CarOption::getPrice)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        BigDecimal price = sum.add(basePrice);
+        return price;
+    }
+
+    public BigDecimal getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(BigDecimal basePrice) {
+        this.basePrice = basePrice;
+    }
 
     public CarOption[] getOptions() {
         return options;
@@ -55,4 +75,8 @@ public class Car {
         }
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(vin);
+    }
 }
