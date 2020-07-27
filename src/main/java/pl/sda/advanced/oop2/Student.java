@@ -1,10 +1,28 @@
 package pl.sda.advanced.oop2;
 
-public class Student extends Person {
+import java.math.BigDecimal;
 
-    public Student(String firstName, String lastName){
+public class Student extends Person implements AgeHolder
+{
+
+    private BigDecimal moneyFromMum;
+
+    public Student(String firstName, String lastName, BigDecimal moneyFromMum){
         super(firstName, lastName); // super() - wywolanie konstruktora z nadklasy
+        this.moneyFromMum = moneyFromMum;
+    }
 
+    public int getAge(){
+        return 18;
+    }
+
+    public BigDecimal getMoneyFromMum() {
+        return moneyFromMum;
+    }
+
+    @Override
+    public BigDecimal getIncome(){
+        return moneyFromMum;
     }
 
     @Override
