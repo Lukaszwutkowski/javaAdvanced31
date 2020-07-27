@@ -1,4 +1,4 @@
-package pl.sda.advanced;
+package pl.sda.advanced.oop1;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -7,12 +7,18 @@ import java.util.Objects;
 
 public class Car {
 
+    public static int carCounter;
     private String model;
     private String manufacturer;
     private String colour;
     private String vin;
     private CarOption[] options = new CarOption[1];
     private BigDecimal basePrice;
+
+    public Car() {
+        System.out.println("Tworzymy samochod numer " + Car.carCounter);
+        Car.carCounter++;
+    }
 
     public BigDecimal finallyPrice(){
         List<CarOption> list = Arrays.asList(options);

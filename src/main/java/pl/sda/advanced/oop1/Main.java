@@ -1,4 +1,4 @@
-package pl.sda.advanced;
+package pl.sda.advanced.oop1;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -21,13 +21,13 @@ public class Main {
         car.setVin("TMBR4567345678450");
         car.setOptions(new CarOption[] {radio,whippers});
         car.setBasePrice(BigDecimal.valueOf(32560));
-        Person person = new Person();
-        person.setSurname("Kowalski");
-        person.setFirstName("Marian");
-        person.setPesel("86042976456");
+        TestPerson testPerson = new TestPerson();
+        testPerson.setSurname("Kowalski");
+        testPerson.setFirstName("Marian");
+        testPerson.setPesel("86042976456");
 
-        System.out.println("Gratulujemy " + person.getFirstName() + " zakupu nowego samochodu"
-                + "\nInformacje nowego wlasciciela: " + "\n" + person.allPersonInformation()
+        System.out.println("Gratulujemy " + testPerson.getFirstName() + " zakupu nowego samochodu"
+                + "\nInformacje nowego wlasciciela: " + "\n" + testPerson.allPersonInformation()
                 + "\nInformacje odnosnie zakuponego samochodu: " + "\n" + car.getAllInformationAboutCar()
                 + "\nDodatkowe wyposazenie: " + car.getOptions()
                 + "\nCena calkowita samochodu: " + car.finallyPrice());
@@ -56,23 +56,23 @@ public class Main {
     }
 
     private static void createPerson(){
-        Person person1 = new Person();
-        Person person2 = new Person();
+        TestPerson testPerson1 = new TestPerson();
+        TestPerson testPerson2 = new TestPerson();
 
-        person1.setFirstName("Anna");
-        person2.setFirstName("Anna");
+        testPerson1.setFirstName("Anna");
+        testPerson2.setFirstName("Anna");
 
-        person1.setPesel("88091231213");
-        person2.setPesel("88091231213");
+        testPerson1.setPesel("88091231213");
+        testPerson2.setPesel("88091231213");
 
-        person1.setSurname("Nowak");
-        person2.setSurname("Nowakowski");
+        testPerson1.setSurname("Nowak");
+        testPerson2.setSurname("Nowakowski");
 
         System.out.println();
 
-        System.out.println("Porownanie 1: " + (person1 == person2));
-        System.out.println("Porownanie 2: " + person1.equals(person2));
-        System.out.println("Porownanie 3: " + (person1.hashCode()==person2.hashCode()));
+        System.out.println("Porownanie 1: " + (testPerson1 == testPerson2));
+        System.out.println("Porownanie 2: " + testPerson1.equals(testPerson2));
+        System.out.println("Porownanie 3: " + (testPerson1.hashCode()== testPerson2.hashCode()));
 
     }
     

@@ -1,4 +1,4 @@
-package pl.sda.advanced;
+package pl.sda.advanced.oop1;
 
 import java.math.BigDecimal;
 
@@ -37,5 +37,14 @@ public class CarOption {
 
     public void setChosen(boolean chosen) {
         this.chosen = chosen;
+    }
+
+    @Override
+    public String toString() {
+        return "CarOption{" +
+                "optionName='" + optionName + '\'' +
+                ", price=" + price +
+                ", chosen=" + chosen +
+                '}';
     }
 }
