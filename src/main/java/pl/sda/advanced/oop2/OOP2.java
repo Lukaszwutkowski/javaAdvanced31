@@ -12,6 +12,5 @@ public class OOP2 {
         System.out.println(student.introduceMyself());
         System.out.println(worker.introduceMyself());
 
-
     }
 }
