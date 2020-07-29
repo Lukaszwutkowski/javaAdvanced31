@@ -10,6 +10,8 @@ public class Main {
 
         kontoTest();
 
+        System.out.println();
+
         Pracownik pracownik1 = new Pracownik("Kolorowa 7", "Iwona", "Nowak", true);
         Pracownik pracownik2 = new Pracownik("Szara 13", "Jozef", "Nowacki", false);
 
@@ -19,6 +21,10 @@ public class Main {
         pracownik1.nameAndLastNameOneString();
         pracownik1.plecTekst();
         pracownik1.emeryturaCzas();
+        System.out.println("WERSJA DRUGA");
+        System.out.println(pracownik1.firstPlusLast("Iwona", " ","Nowak" ));
+        System.out.println(pracownik1.sexText(true));
+        System.out.println(pracownik1.doEmerytury(34));
         pracownik2.nameAndLastNameOneString();
         pracownik2.plecTekst();
         pracownik2.emeryturaCzas();

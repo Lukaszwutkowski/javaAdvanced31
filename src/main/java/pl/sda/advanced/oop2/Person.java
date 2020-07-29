@@ -6,6 +6,7 @@ import java.math.BigInteger;
 public class Person {
     private String firstName;
     private String lastName;
+    private Countries country;
 
 
     public String introduceMyself(){
@@ -18,9 +19,10 @@ public class Person {
     }
 
 
-    public Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName, Countries country) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.country = country;
     }
 
     public String getFirstName() {
@@ -36,6 +38,7 @@ public class Person {
         return "Person{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", country=" + country +
                 '}';
     }
 }

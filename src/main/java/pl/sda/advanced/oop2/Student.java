@@ -7,8 +7,8 @@ public class Student extends Person implements AgeHolder
 
     private BigDecimal moneyFromMum;
 
-    public Student(String firstName, String lastName, BigDecimal moneyFromMum){
-        super(firstName, lastName); // super() - wywolanie konstruktora z nadklasy
+    public Student(String firstName, String lastName, BigDecimal moneyFromMum, Countries country){
+        super(firstName, lastName, country); // super() - wywolanie konstruktora z nadklasy
         this.moneyFromMum = moneyFromMum;
     }
 

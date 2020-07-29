@@ -17,6 +17,28 @@ public class Pracownik extends Konto {
         this.plec = plec;
     }
 
+    public String firstPlusLast (String firstName, String secondNAme, String lastName){
+        String all = firstName + secondNAme + lastName;
+        return all;
+    }
+
+    public String sexText(boolean text){
+        if (true){
+            return "Kobieta";
+        } else {
+        return "Mezczyzna";
+        }
+    }
+
+    public String doEmerytury(int x){
+
+        if (plec == true){
+            return "Do emerytury pozostalo: " + (60 - x) + " lat";
+        } else {
+           return "Do emerytury pozostalo: " + (65 - x) + " lat";
+        }
+    }
+
     public void nameAndLastNameOneString(){
         String nameAndLastName = firstName + lastName;
         System.out.println(nameAndLastName);
@@ -77,5 +99,16 @@ public class Pracownik extends Konto {
 
     public void setPensja(BigDecimal pensja) {
         this.pensja = pensja;
+    }
+
+    @Override
+    public String toString() {
+        return "Pracownik{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", plec=" + plec +
+                ", pensja=" + pensja +
+                '}';
     }
 }

@@ -1,6 +1,7 @@
 package pl.sda.advanced.oop2;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class OOP2 {
 
@@ -10,10 +11,24 @@ public class OOP2 {
         polymorphism();
         interfaces();
 
+        Countries poland = Countries.POLAND; // instancja enuma - objekt POLAND
+        System.out.println(poland.name());
+        System.out.println(poland.toString());
+        System.out.println(poland); // toString domyslnie odpalany
+
+        Countries[] values = Countries.values();
+        System.out.println(Arrays.toString(values));
+
+        String polandText = "Poland";
+        Countries countries = Countries.valueOf(polandText.toUpperCase());
+        System.out.println(countries);
+
+
+
     }
 
     private static void interfaces() {
-        AgeHolder student = new Student("Jan", "Kowalski", BigDecimal.valueOf(200));
+        AgeHolder student = new Student("Jan", "Kowalski", BigDecimal.valueOf(200), Countries.POLAND);
         AgeHolder dog = new Dog(5);
 
         AgeHolder[] ageHolders = new AgeHolder[]{student, dog};
@@ -23,8 +38,8 @@ public class OOP2 {
     }
 
     private static void polymorphism() {
-        Person studentPerson = new Student("Jan", "Kowalski", BigDecimal.valueOf(200));
-        Person workerPerson = new Worker("Kuba", "Nowak", BigDecimal.valueOf(5000));
+        Person studentPerson = new Student("Jan", "Kowalski", BigDecimal.valueOf(200), Countries.POLAND);
+        Person workerPerson = new Worker("Kuba", "Nowak", BigDecimal.valueOf(5000), Countries.POLAND);
         printIncome(studentPerson);
         printIncome(workerPerson);
 
@@ -55,8 +70,8 @@ public class OOP2 {
     }
 
     public static void personBasic(){
-        Student student = new Student("Jan", "Kowalski", BigDecimal.valueOf(200));
-        Worker worker = new Worker("Kuba", "Nowak", BigDecimal.valueOf(5000));
+        Student student = new Student("Jan", "Kowalski", BigDecimal.valueOf(200), Countries.POLAND);
+        Worker worker = new Worker("Kuba", "Nowak", BigDecimal.valueOf(5000), Countries.POLAND);
 
         System.out.println(student);
         System.out.println(worker);
