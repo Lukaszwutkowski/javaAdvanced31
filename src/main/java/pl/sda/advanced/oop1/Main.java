@@ -1,5 +1,6 @@
 package pl.sda.advanced.oop1;
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.Arrays;
 
@@ -29,7 +30,7 @@ public class Main {
         System.out.println("Gratulujemy " + testPerson.getFirstName() + " zakupu nowego samochodu"
                 + "\nInformacje nowego wlasciciela: " + "\n" + testPerson.allPersonInformation()
                 + "\nInformacje odnosnie zakuponego samochodu: " + "\n" + car.getAllInformationAboutCar()
-                + "\nDodatkowe wyposazenie: " + car.getOptions()
+                + "\nDodatkowe wyposazenie: " + Arrays.toString(car.getOptions())
                 + "\nCena calkowita samochodu: " + car.finallyPrice());
 
 

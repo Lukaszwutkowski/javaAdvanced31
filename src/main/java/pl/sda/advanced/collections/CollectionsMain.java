@@ -44,6 +44,11 @@ public class CollectionsMain {
                 .collect(Collectors.toList());
         System.out.println(collect);
 
+        List<Plane> allPlanes = Arrays.asList(first,second,third);
+        Map<Object, Long> collect1 = allPlanes.stream()
+                .collect(Collectors.groupingBy(e -> e.getModel(), Collectors.counting()));
+        System.out.println(collect1);
+
 
     }
 
